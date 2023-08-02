@@ -1,0 +1,126 @@
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--  <meta charset="UTF-8">-->
+<!--  <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+<!--  <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--  <title>Document</title>-->
+<!--  <link rel="shortcut icon" href="#">-->
+<!--  <style>-->
+<!--    /* @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap'); */-->
+
+<!--    body {-->
+<!--      font-family: 'Roboto', sans-serif;-->
+<!--      margin-top: 10vw;-->
+<!--    }-->
+
+<!--    form {-->
+<!--      max-width: 500px;-->
+<!--      margin: auto;-->
+<!--      padding: 20px;-->
+<!--      border: 1px solid #ccc;-->
+<!--      border-radius: 5px;-->
+<!--      box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;-->
+<!--    }-->
+
+<!--    label {-->
+<!--      display: inline-block;-->
+<!--      width: 150px;-->
+<!--      font-weight: bold;-->
+<!--      margin-bottom: 10px;-->
+<!--    }-->
+
+<!--    input[type="text"],-->
+<!--    input[type="password"] {-->
+<!--      width: 96%;-->
+<!--      padding: 10px;-->
+<!--      border: 1px solid #ccc;-->
+<!--      border-radius: 5px;-->
+<!--      margin-bottom: 20px;-->
+<!--    }-->
+
+<!--    button[type="submit"] {-->
+<!--      background-color: #4CAF50;-->
+<!--      color: white;-->
+<!--      padding: 10px 20px;-->
+<!--      border: none;-->
+<!--      border-radius: 5px;-->
+<!--      cursor: pointer;-->
+<!--    }-->
+
+<!--    button[type="submit"]:hover {-->
+<!--      background-color: #3e8e41;-->
+<!--    }-->
+<!--  </style>-->
+
+<!--</head>-->
+<!--<body>-->
+<!--<form id="login">-->
+<!--  <label for="username">Tên đăng nhập: </label>-->
+<!--  <input type="text" id="username" name="username" required="required"><br><br>-->
+
+<!--  <label for="password">Mật khẩu:</label>-->
+<!--  <input type="password" id="password" name="password" required="required"><br><br>-->
+
+<!--  <button type="submit">Đăng nhập</button>-->
+
+<!--</form>-->
+<!--<button type="submit" id="13">next</button>-->
+<!--<script>-->
+<!--  console.log("1")-->
+<!--  const next = document.getElementById("13")-->
+
+<!--  const login = document.getElementById("login")-->
+<!--  const email = document.getElementById("username")-->
+<!--  const pass = document.getElementById("password")-->
+<!--  login.addEventListener("submit", function (e){-->
+<!--    e.preventDefault();-->
+<!--    const emailValue = email.value;-->
+<!--    const passValue = pass.value;-->
+<!--    console.log(emailValue)-->
+<!--    fetch("http://localhost:8080/api/auth/signin",-->
+<!--            {-->
+<!--              method:"POST",-->
+<!--              headers:{-->
+<!--                'Content-Type': 'application/json'-->
+<!--              },-->
+<!--              body:JSON.stringify({-->
+<!--                username:emailValue,-->
+<!--                password: passValue-->
+<!--              })-->
+<!--            }).then((data)=>{-->
+<!--      return data.json()-->
+<!--    }).then((data)=>{-->
+<!--      console.log(data)-->
+<!--      localStorage.setItem("token",data.token);-->
+<!--      localStorage.setItem("id",data.id);-->
+<!--      var local = localStorage.getItem("id");-->
+<!--      var local2 = localStorage.getItem("token")-->
+<!--      console.log(local2)-->
+<!--      console.log(local)-->
+<!--      alert("đăng nhập thành công")-->
+<!--      // window.location.href='/view/library1'-->
+<!--    })-->
+<!--            .catch(error => console.log(error))-->
+<!--  })-->
+<!--  next.addEventListener("click", function (e){-->
+<!--    const token = localStorage.getItem("token")-->
+<!--    console.log(token)-->
+<!--    fetch('http://localhost:8080/view/capnhatthuvien1',-->
+<!--            {-->
+<!--              method:"GET",-->
+<!--              headers:{-->
+<!--                'Content-Type': 'application/json',-->
+<!--                'Authorization': 'Bearer '+ token,-->
+<!--              }-->
+<!--            })-->
+<!--            // .then(response => response.json())-->
+<!--            .then(data => {-->
+<!--              window.location.href='/view/capnhatthuvien1'-->
+<!--              // console.log(data);-->
+<!--            })-->
+<!--            .catch(error => console.error(error));-->
+<!--  })-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
